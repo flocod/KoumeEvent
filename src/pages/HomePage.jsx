@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import logo from '../images/LOGOKOUME.svg';
+import slogan from '../images/SLOGAN.svg';
 
 import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(useGSAP);
@@ -87,7 +88,7 @@ const HomePage = () => {
                 <h1 className='tag'>Fondation & Révolution</h1>
             </div>
 
-            <div className="section" ref={sectionRef}>
+            <div className="section events" ref={sectionRef}>
                 <div className="left">
                     <p className="text">Inscris-toi aux différents Camps que nous avons pour toi cette année</p>
                     <div className='text2'><span>The place to be !!!</span></div>
@@ -140,7 +141,18 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-        </div >
+
+            <div className="section cta">
+                <div className="ctaImg">
+                    <img src={slogan} alt={'slogan'} />
+                </div>
+
+                <div className="slogantext">
+                    Talks, networking, activities, and parties. Learn from global influential leaders, connect with like-minded peers, and shape the future of the digital industry.
+                </div>
+            </div>
+
+        </div>
     );
 }
 

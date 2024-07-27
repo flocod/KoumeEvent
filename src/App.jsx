@@ -55,6 +55,26 @@ function App() {
             <Route path="/" element={<HomePage />} />
           </Routes>
         </Router>
+
+
+        <div className="footer">
+          <div className="copyright">
+            © {(new Date()).getFullYear()} Koume {(new Date()).getFullYear()} .Tous droits réservés
+          </div>
+
+          <ul className="socials">
+            <li><a href="http://" target='blank'>YouTube</a></li>
+            <li><a href="http://" target='blank'>Facebook</a></li>
+            <li><a href="http://" target='blank'>Twitter</a></li>
+            <li><a href="http://" target='blank'>Instagram</a></li>
+          </ul>
+
+          <div className="developer">
+            Made with love by <a href='https://flocod.vercel.app' className="site" target='blank'>flocod</a>
+          </div>
+
+        </div>
+
         {/* Inserer votre contenu ici */}
       </div>
     </div>
