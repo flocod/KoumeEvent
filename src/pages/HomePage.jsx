@@ -22,12 +22,22 @@ const HomePage = () => {
         gsap.to('.good', { scale: 1, duration: 1, delay: 0 });
     });
 
+    const handleHoverCard = contextSafe((e) => {
+        // console.log(gsap.getProperty(e.target, 'backgroundColor'));
+        const currentBg = gsap.getProperty(e.target, 'backgroundColor');
+
+        if (currentBg !== 'rgba(0, 0, 0, 0)') {
+            gsap.to('.tag', { color: currentBg, duration: .5, delay: 0 });
+        }
+    });
+    const handleMouseLeaveCard = contextSafe((e) => {
+        gsap.to('.tag', { color: '#4053FE', duration: 0, delay: 0 });
+    });
+
     useGSAP(() => {
         gsap.from(logoRef.current, { opacity: 0, y: -50, duration: 1 });
         gsap.from(titleRef.current, { opacity: 0, y: 50, duration: 1, delay: 0.5 });
         gsap.from(sectionRef.current, { opacity: 0, duration: 1, delay: 1 });
-
-
 
         cardRefs.current.forEach((card, index) => {
             gsap.from(card, {
@@ -84,7 +94,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="cardgroup">
-                    <div className="card redcard" ref={(el) => (cardRefs.current[0] = el)}>
+                    <div className="redcard card" ref={(el) => (cardRefs.current[0] = el)} onMouseEnter={(e) => handleHoverCard(e)} onMouseLeave={(e) => handleMouseLeaveCard(e)} >
                         <div className="cardContainer">
                             <div className="cardtitle">Camp Biblique Des Agneaux</div>
                             <div className="date">Du 21 au 30 juillet 2024 à Koume</div>
@@ -99,7 +109,7 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    <div className="card greencard" ref={(el) => (cardRefs.current[1] = el)}>
+                    <div className="card greencard" ref={(el) => (cardRefs.current[1] = el)} onMouseEnter={(e) => handleHoverCard(e)} onMouseLeave={(e) => handleMouseLeaveCard(e)}>
                         <div className="cardContainer">
                             <div className="cardtitle">Camp Biblique De La Fondation</div>
                             <div className="date">Du 21 au 30 juillet 2024 à Koume</div>
@@ -114,7 +124,7 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    <div className="card bluecard" ref={(el) => (cardRefs.current[2] = el)}>
+                    <div className="card bluecard" ref={(el) => (cardRefs.current[2] = el)} onMouseEnter={(e) => handleHoverCard(e)} onMouseLeave={(e) => handleMouseLeaveCard(e)}>
                         <div className="cardContainer">
                             <div className="cardtitle">Camp Biblique Des Leadeurs</div>
                             <div className="date">Du 01 au 15 août 2024 à Koumé</div>
@@ -130,7 +140,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

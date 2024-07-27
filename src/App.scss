@@ -45,7 +45,7 @@
       text-align: center;
 
       &:last-child {
-        font-weight: 200;
+        font-weight: 300;
       }
 
       @media all and (max-width: 1035px) {
@@ -140,17 +140,7 @@
         gap: 1em;
       }
 
-      .redcard {
-        background-color: #ef5232;
-      }
 
-      .greencard {
-        background-color: #9d9b39;
-      }
-
-      .bluecard {
-        background-color: #4053fe;
-      }
 
       .card {
         display: grid;
@@ -160,6 +150,7 @@
         padding: 0px;
         width: 33%;
         height: 430px;
+        cursor: pointer;
 
         @media all and (max-width: 1082px) {
           width: 100%;
@@ -209,16 +200,43 @@
           }
         }
 
-        // &:nth-child(2) {
-        //   position: relative;
-        //   top: 20%;
-        // }
+        &:nth-child(2) {
+          position: relative;
+          top: 10%;
+        }
 
-        // &:nth-child(3) {
-        //   position: relative;
-        //   top: 40%;
-        // }
+        &:nth-child(3) {
+          position: relative;
+          top: 30%;
+        }
 
+        @media all and (max-width: 1082px) {
+          &:nth-child(2) {
+            position: relative;
+            top: 0%;
+          }
+
+          &:nth-child(3) {
+            position: relative;
+            top: 0%;
+          }
+
+        }
+
+        font-size: 0.9em;
+
+      }
+
+      .redcard {
+        background: #C53E5A;
+      }
+
+      .greencard {
+        background: #2189C9;
+      }
+
+      .bluecard {
+        background: #D09E11;
       }
 
 
