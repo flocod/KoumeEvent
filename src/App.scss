@@ -1,0 +1,229 @@
+.HomePage {
+
+  .logo {
+    width: 30%;
+
+    @media all and (max-width: 1450px) {
+      width: 40%;
+    }
+
+    @media all and (max-width: 1100px) {
+      width: 477px;
+    }
+
+    @media all and (max-width: 600px) {
+      width: 70%;
+    }
+
+    img {
+      width: 100%;
+
+    }
+  }
+
+  .title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    @media all and (max-width: 1000px) {
+      margin-bottom: 1em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 5vw;
+
+      @media all and (max-width: 1450px) {
+        font-size: 5vw;
+      }
+
+
+
+      font-weight: 700;
+      color: #4053FE;
+      line-height: 1em;
+      text-align: center;
+
+      &:last-child {
+        font-weight: 200;
+      }
+
+      @media all and (max-width: 1035px) {
+        font-size: 8vw;
+
+        &:last-child {
+          font-weight: 300;
+        }
+      }
+
+    }
+
+    .tag {
+      height: 70px;
+    }
+
+  }
+
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25em;
+    width: 100%;
+    margin-top: 4em;
+
+    @media all and (max-width: 1530px) {
+      margin-top: 1em;
+      flex-direction: column;
+    }
+
+    @media all and (max-width: 1000px) {
+      margin-top: 0em;
+    }
+
+    .left {
+      width: 30%;
+
+      @media all and (max-width: 1530px) {
+        width: 100%;
+        text-align: center;
+      }
+
+      @media all and (max-width: 1000px) {
+        font-size: .6em;
+      }
+
+      .text {
+        display: block;
+        color: #2E3129;
+        font-size: 2em;
+        line-height: 1em;
+        margin: 0;
+        margin-bottom: 20px;
+
+        @media all and (max-width: 1000px) {
+          font-weight: 400;
+          margin-bottom: 10px;
+
+        }
+      }
+
+      .text2 {
+        display: block;
+        font-size: 1.2em;
+
+        @media all and (max-width: 1000px) {
+          font-size: 2em;
+
+        }
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .cardgroup {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+      gap: 1%;
+
+      @media all and (max-width: 1530px) {
+        width: 100%;
+        margin-top: 1em;
+      }
+
+      @media all and (max-width: 1082px) {
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .redcard {
+        background-color: #ef5232;
+      }
+
+      .greencard {
+        background-color: #9d9b39;
+      }
+
+      .bluecard {
+        background-color: #4053fe;
+      }
+
+      .card {
+        display: grid;
+        place-items: center;
+        color: white;
+        border-radius: 4px;
+        padding: 0px;
+        width: 33%;
+        height: 430px;
+
+        @media all and (max-width: 1082px) {
+          width: 100%;
+
+        }
+
+        .cardContainer {
+          width: 80%;
+          margin-top: 15%;
+          margin-bottom: 15%;
+
+          @media all and (max-width: 1082px) {
+            font-size: .8em;
+
+          }
+        }
+
+        .cardtitle {
+          font-size: 2.5em;
+          line-height: 1em;
+          font-weight: 500;
+        }
+
+        .date {
+          font-size: 2em;
+          line-height: 1em;
+          font-weight: 300;
+          margin-top: 2em;
+        }
+
+        .btn {
+          margin-top: 3em;
+          display: flex;
+          align-items: center;
+          // justify-content: center;
+          font-size: 1.3em;
+
+          .t {
+            margin-right: 1em;
+            // line-height: 0;
+          }
+
+          svg {
+            zoom: 2;
+            transform-origin: center;
+            transform: translateY(-8%);
+          }
+        }
+
+        // &:nth-child(2) {
+        //   position: relative;
+        //   top: 20%;
+        // }
+
+        // &:nth-child(3) {
+        //   position: relative;
+        //   top: 40%;
+        // }
+
+      }
+
+
+    }
+
+  }
+
+}

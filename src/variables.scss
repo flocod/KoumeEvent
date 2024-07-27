@@ -1,0 +1,30 @@
+$light-theme: (
+  primary: #F3FAFF,
+  secondary: #f8f9fa,
+  text-color: #2E3129,
+);
+
+$dark-theme: (
+  primary: #000000,
+  secondary: #343a40,
+  text-color: #ffffff,
+);
+// $light-theme: (
+//   primary: #ffffff,
+//   secondary: #f8f9fa,
+//   text-color: #000000,
+// );
+
+// $dark-theme: (
+//   primary: #000000,
+//   secondary: #343a40,
+//   text-color: #ffffff,
+// );
+
+@mixin theme($theme) {
+  background-color: map-get($theme, primary);
+  color: map-get($theme, text-color);
+  .secondary-background {
+    background-color: map-get($theme, secondary);
+  }
+}
