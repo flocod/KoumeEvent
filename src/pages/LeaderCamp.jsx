@@ -1,11 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import logo from '../images/LOGOKOUME.svg';
-import slogan from '../images/SLOGAN.svg';
-import speaker1 from '../images/Theodore Andoseh.png';
-import speaker2 from '../images/Joseph Ngandeu.png';
+import speaker1 from '../images/Theodore Andoseh.jpg';
+import speaker2 from '../images/Joseph Ngandeu.jpg';
 
 import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(useGSAP);
@@ -44,10 +42,10 @@ const LeaderCamp = () => {
         <div className='page CAMPS Leadercamp'>
             <div className="header">
                 <div className="left">
-                    <div className="titlegp">
+                    <Link to={'/'} className="titlegp">
                         <div className="place tint">KOUME 2024</div>
                         <div className="place">CB. Leadeurs</div>
-                    </div>
+                    </Link>
 
                     <div className="dateplace">
                         <div >Aout 01 - 15 <span>/</span> 2024</div>
