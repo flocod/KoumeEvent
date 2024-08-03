@@ -25,14 +25,14 @@ const HomePage = () => {
 
     const handleHoverCard = contextSafe((e) => {
         // console.log(gsap.getProperty(e.target, 'backgroundColor'));
-        const currentBg = gsap.getProperty(e.target, 'backgroundColor');
+        // const currentBg = gsap.getProperty(e.target, 'backgroundColor');
 
-        if (currentBg !== 'rgba(0, 0, 0, 0)') {
-            gsap.to('.tag', { color: currentBg, duration: .5, delay: 0 });
-        }
+        // if (currentBg !== 'rgba(0, 0, 0, 0)') {
+        //     gsap.to('.tag', { color: currentBg, duration: .5, delay: 0 });
+        // }
     });
     const handleMouseLeaveCard = contextSafe((e) => {
-        gsap.to('.tag', { color: '#4053FE', duration: 0, delay: 0 });
+        // gsap.to('.tag', { color: '#4053FE', duration: 0, delay: 0 });
     });
 
     useGSAP(() => {
@@ -129,7 +129,7 @@ const HomePage = () => {
                         <div className="cardContainer">
                             <div className="cardtitle">Camp Biblique Des Leadeurs</div>
                             <div className="date">Du 01 au 15 août 2024 à Koumé</div>
-                            <Link to={'/'} className="btn">
+                            <Link to={'/leader'} className="btn">
                                 <div className="t">S’INSCRIRE</div>
                                 <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="2" height="2" fill="white" />

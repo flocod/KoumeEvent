@@ -2,6 +2,7 @@ import './App.scss';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import LeaderCamp from './pages/LeaderCamp';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
@@ -15,9 +16,9 @@ function App() {
     localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
   }, [isDarkTheme]);
 
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-  };
+  // const toggleTheme = () => {
+  //   setIsDarkTheme(!isDarkTheme);
+  // };
 
   return (
     <div className={`App-container ${isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
@@ -45,7 +46,6 @@ function App() {
       <div className="wrapper">
         {/* Inserer votre contenu ici */}
 
-
         {/* 
         <button onClick={toggleTheme}>
           {isDarkTheme ? 'Passer au thème clair' : 'Passer au thème sombre'}
@@ -53,20 +53,20 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/leader" element={<LeaderCamp />} />
           </Routes>
         </Router>
 
 
         <div className="footer">
           <div className="copyright">
-            © {(new Date()).getFullYear()} Koume {(new Date()).getFullYear()} .Tous droits réservés
+            © Koume {(new Date()).getFullYear()} .Tous droits réservés
           </div>
 
           <ul className="socials">
-            <li><a href="http://" target='blank'>YouTube</a></li>
+            <li><a href="https://www.youtube.com/@ZTFMINISTRY/streams" target='blank'>YouTube</a></li>
             <li><a href="http://" target='blank'>Facebook</a></li>
-            <li><a href="http://" target='blank'>Twitter</a></li>
-            <li><a href="http://" target='blank'>Instagram</a></li>
+            <li><a href="https://www.instagram.com/p/C93LV2FRavX/?igsh=MTllOHNmOXBmMmljbg==" target='blank'>Instagram</a></li>
           </ul>
 
           <div className="developer">
