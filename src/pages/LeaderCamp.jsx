@@ -200,9 +200,9 @@ const LeaderCamp = () => {
                                     </defs>
                                 </svg>
 
-                                <div className="text">
+                                <Link to={'/leader/gallery'} className="text">
                                     Voir toutes les images
-                                </div>
+                                </Link>
 
                             </div>
                         </div>

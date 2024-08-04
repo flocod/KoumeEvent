@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LeaderCamp from './pages/LeaderCamp';
 
+import Galery from './pages/Galery'
+
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
     // Récupérer le thème depuis le localStorage ou utiliser false par défaut
@@ -54,6 +56,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/leader" element={<LeaderCamp />} />
+            <Route path="/leader/gallery" element={<Galery />} />
           </Routes>
         </Router>
 
