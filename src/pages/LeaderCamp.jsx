@@ -181,7 +181,7 @@ const LeaderCamp = () => {
 
                     <div className="galerieSection">
                         <h2 className="sectionTitle">
-                            Notre Galerie : Revivez les moments forts.
+                            Parcourez notre galerie & revivez les moments forts.
                         </h2>
 
                         <div className="galContain">
