@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react';
 import speaker1 from '../images/Theodore Andoseh.jpg';
 import speaker2 from '../images/Joseph Ngandeu.jpg';
 import rvc from '../images/rvc.png';
-import preview from '../images/preview.png';
+import preview from '../images/preview.jpg';
 
 
 import TextPlugin from 'gsap/TextPlugin';
@@ -159,7 +159,7 @@ const LeaderCamp = () => {
                                 <div class="box box4"></div>
                                 <div class="box box5"></div>
                             </div>
-                            <div onClick={toggleIframe} className="text"> {isVisible ? "Fermez le lecteur" : "Ecoutez le direct"} </div>
+                            <div onClick={toggleIframe} className="text"> {isVisible ? "Fermez le lecteur" : "Ecoutez le direct "} </div>
                         </div>
 
                         <Link to={"https://www.youtube.com/@ZTFMINISTRY"} target='_blank' className="platform youtube">
