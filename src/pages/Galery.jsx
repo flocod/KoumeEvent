@@ -7,20 +7,73 @@ import "react-photo-album/rows.css";
 import "yet-another-react-lightbox/styles.css";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Loader from "react-js-loader";
 
-import slides from "../slide";
+const breakpoints = [3840, 1920, 1080, 640, 384, 256, 128];
 
 export default function Galery() {
     const [index, setIndex] = React.useState(-1);
+    const [slides, setSlides] = React.useState([]);
+    const [isLoading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState('');
 
+    const color = '#4053FE';
+
+    function assetLink(asset) {
+        return `https://cmfidouala.com/Koume2024/${encodeURIComponent(asset)}`;
+    }
+
+    // Fonction pour obtenir les images de l'API
+    async function fetchImages() {
+        const response = await fetch('https://cmfidouala.com/Koume2024/index.php');
+        if (!response.ok) {
+            setError('Failed to fetch images')
+            throw new Error('Failed to fetch images');
+        }
+        return response.json();
+    }
 
     React.useEffect(() => {
+        // Fonction pour construire les slides
+        async function buildSlides() {
+            const images = await fetchImages();
+            const slides = images.map((asset) => {
+                // Ici, vous devez connaître ou estimer la largeur et la hauteur des images.
+                // Vous pouvez remplacer ces valeurs par des valeurs dynamiques si vous avez accès à ces informations.
+                // const width = 3840; // Valeur par défaut, remplacez-la si nécessaire
+                // const height = 2160; // Valeur par défaut, remplacez-la si nécessaire
+                const width = 1080; // Valeur par défaut, remplacez-la si nécessaire
+                const height = 720; // Valeur par défaut, remplacez-la si nécessaire
+
+                return {
+                    src: assetLink(asset),
+                    width,
+                    height,
+                    srcSet: breakpoints.map((breakpoint) => ({
+                        src: assetLink(asset, breakpoint),
+                        width: breakpoint,
+                        height: Math.round((height / width) * breakpoint),
+                    })),
+                };
+            });
+
+            return slides;
+        }
 
         const scrollToTop = () => {
             document.querySelector(".App-container").scrollTo({ top: 0, behavior: 'smooth' });
         };
-
         scrollToTop();
+
+        buildSlides().then((slides) => {
+            console.log(slides);
+            setSlides(slides);
+            setLoading(false);
+        }).catch((error) => {
+            console.error('Error building slides:', error);
+            setLoading(false);
+        });
+
 
     }, []);
 
@@ -37,6 +90,7 @@ export default function Galery() {
                         <div >Aout 01 - 15 <span>/</span> 2024</div>
                         <div>Koumé, Bertoua</div>
                     </div>
+
                 </div>
 
                 <div className="right">
@@ -52,13 +106,14 @@ export default function Galery() {
             <br />
             <br />
             <br />
+            {isLoading ? <Loader type="spinner-circle" bgColor={color} color={color} title={"Chargement..."} size={100} /> : error !== '' ? error : ''}
+
 
             <Container maxWidth="100%" sx={{ textAlign: "center" }}>
 
                 <Box component="main" sx={{ mb: 3 }}>
                     <RowsPhotoAlbum
                         photos={slides}
-                        targetRowHeight={150}
                         onClick={({ index: current }) => setIndex(current)}
                     />
                     <Lightbox

@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react';
 import speaker1 from '../images/Theodore Andoseh.jpg';
 import speaker2 from '../images/Joseph Ngandeu.jpg';
 import rvc from '../images/rvc.png';
-import preview from '../images/preview.jpg';
+import preview from '../images/preview.png';
 
 
 import TextPlugin from 'gsap/TextPlugin';
